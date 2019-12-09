@@ -9,14 +9,14 @@ public class MoreHealth : MonoBehaviour
         Debug.Log("object that entered the trigger:" + other);
 
 
-        RubyController Controller = other.GetComponent<RubyController>();
+        RubyController controller = other.GetComponent<RubyController>();
         // get the player controller from the other thing collided with the trigger
-        if (Controller != null) // if the controller retrevied is not empty
+        if (controller != null) // if the controller retrevied is not empty
         {
             // ! the exclamation is a negation value
-            if (Controller.currentHealth < Controller.maxHealth)
+            if (controller.currentHealth < controller.maxHealth)
             {
-                Controller.ChangeHealth(1);
+                controller.ChangeHealth(1);
                 // call the health function and add 1 to the health of the player
                 Destroy(gameObject); // Destroys all the game objectand this script
 

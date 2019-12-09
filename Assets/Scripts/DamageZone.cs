@@ -9,12 +9,12 @@ public class DamageZone : MonoBehaviour
         Debug.Log("object that entered the trigger:" + other);
 
 
-        RubyController Controller = other.GetComponent<RubyController>();
+        RubyController controller = other.GetComponent<RubyController>();
         // get the player controller from the other thing collided with the trigger
-        if (Controller != null) // if the controller retrevied is not empty
+        if (controller != null) // if the controller retrevied is not empty
         {
             // ! the exclamation is a negation value
-            Controller.ChangeHealth(-1);
+            controller.ChangeHealth(-1);
             // call the health function and add 1 to the health of the player
             
         }
