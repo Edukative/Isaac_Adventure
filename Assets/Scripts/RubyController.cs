@@ -50,9 +50,9 @@ public class RubyController : MonoBehaviour
       
     }
     
-    public void ChangeHealth(int amount0)
+    public void ChangeHealth(int amount)
     {
-        if (amount0 < 0) // as is inferior to 0, it means damage
+        if (amount < 0) // as is inferior to 0, it means damage
         {
             if (isInvincible) // already invincible? Don't do anything
             {
