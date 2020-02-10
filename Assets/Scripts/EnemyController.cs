@@ -60,17 +60,30 @@ public class EnemyController : MonoBehaviour
 
         //Vector2 position = rb2D.position;// get the curreent position of the enemy
         Vector2 wayPointDirection = localNodes[nextNode] - rb2D.position;
+        UpdateAnimations(wayPointDirection);
         float dist = speed * Time.deltaTime;
 
-        if (wayPointDirection.sqrmagnitude < dist* dist) // if the enemy arrived to the
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log(wayPointDirection.sqrMagnitude);
+        }
+        if (wayPointDirection.sqrMagnitude < dist* dist) // if the enemy arrived to the
         {
             dist = wayPointDirection.magnitude;
             currentNode = nextNode; // it arrived to the waypoint so it turns to the next
             nextNode += 1;
             if (nextNode >= localNodes.Length) // it reached the end
+            {
+                nextNode = 0; // it loops again and goes to the first waypoint
+            }
         }
 
-        if (isVertical) // if the enemy walks vertically
+        Velocity = wayPointDirection.normalized * dist;
+
+        rb2D.MovePosition(rb2D.position + Velocity);
+        // apply the previous sum position to the enemy's rigidbody
+
+        /*if (isVertical) // if the enemy walks vertically
         {
             // same as isVertical == true;
             position.y = position.y + Time.deltaTime * speed * direction;
@@ -86,11 +99,14 @@ public class EnemyController : MonoBehaviour
             // animator values setting
             anim.SetFloat("Move X", direction);
             anim.SetFloat("Move Y", 0);
-        }
+        }*/
 
-
-        rb2D.MovePosition(position);
         // apply the previous sum position to the enemy's rigidbody
+    }
+    void UpdateAnimations (Vector2 direction)
+    {
+        anim.SetFloat("Move X", direction.x);
+        anim.SetFloat("Move Y", direction.y);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
