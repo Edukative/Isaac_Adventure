@@ -18,13 +18,16 @@ public class RubyController : MonoBehaviour
     Animator anim;
     Vector2 lookDirection = new Vector2(1, 0); // the direction is facing the player in the scene
 
+    // projectile values
+    public GameObject projectilePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
         rubyRB2D = GetComponent<Rigidbody2D>(); // Get the player's rigidbody
         currentHealth = maxHealth; // the current health is the max health available to the player
         anim = GetComponent<Animator>(); // get the player's Animator
-        
+
     }
 
     // Update is called once per frame
@@ -55,16 +58,19 @@ public class RubyController : MonoBehaviour
         if (isInvincible) // invincible because the player has collided with damage
         {
             InvincibleTimer -= Time.deltaTime; // count down the timer
-            
+
             if (InvincibleTimer < 0) // the timer ended
             {
                 isInvincible = false; // the player is vulnerable again
             }
         }
-        
-      
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Launch();
+        }
     }
-    
+
     public void ChangeHealth(int amount)
     {
         if (amount < 0) // as is inferior to 0, it means damage
@@ -79,5 +85,18 @@ public class RubyController : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth); // limits the number between 0 to max health
         Debug.Log(currentHealth + "/" + maxHealth);
+    }
+
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rubyRB2D.position * Vector2.up * 0.5f, Quaternion.identity);
+        // spawns a projectile and stores it inside a GameObject variable
+
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        // gets the projectile script of the spawned projectile and stores it inside a variable
+
+        projectile.Launch(lookDirection, 300);
+
+        anim.SetTrigger("Launch"); // Sets the shooting animation
     }
 }
