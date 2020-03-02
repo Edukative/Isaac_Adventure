@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour
     int nextNode;
     Vector2 Velocity;
 
+    bool broken = true;
+
     // Start is called before the first frame update
     void Start()
     {

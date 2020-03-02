@@ -8890,12 +8890,12 @@ PrefabInstance:
     - target: {fileID: 6022048790905327510, guid: 4c3314147f9742f47b76059d5cbfd26f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.36
+      value: 312.88
       objectReference: {fileID: 0}
     - target: {fileID: 6022048790905327510, guid: 4c3314147f9742f47b76059d5cbfd26f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.16
+      value: -7.34
       objectReference: {fileID: 0}
     - target: {fileID: 6022048790905327510, guid: 4c3314147f9742f47b76059d5cbfd26f,
         type: 3}
@@ -8966,6 +8966,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022048790905327508, guid: 4c3314147f9742f47b76059d5cbfd26f,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5167127677038596439, guid: 4c3314147f9742f47b76059d5cbfd26f,
         type: 3}
@@ -12885,6 +12890,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: '#1Player'
       objectReference: {fileID: 0}
+    - target: {fileID: 1766507466984419796, guid: 203a44188e2881f41a1227653b40bc80,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766507466984419796, guid: 203a44188e2881f41a1227653b40bc80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1766507466984419627, guid: 203a44188e2881f41a1227653b40bc80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12963,12 +12978,12 @@ PrefabInstance:
     - target: {fileID: -6649178837061124725, guid: 203a44188e2881f41a1227653b40bc80,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.14745033
+      value: -0.010514319
       objectReference: {fileID: 0}
     - target: {fileID: -6649178837061124725, guid: 203a44188e2881f41a1227653b40bc80,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.7333882
+      value: 0.41745883
       objectReference: {fileID: 0}
     - target: {fileID: 1766507466984419797, guid: 203a44188e2881f41a1227653b40bc80,
         type: 3}
@@ -12976,6 +12991,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5735336769981747831, guid: c9c51e4ccded9f446bc68cefe4673927,
         type: 3}
+    - target: {fileID: 1766507467395227094, guid: 203a44188e2881f41a1227653b40bc80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 203a44188e2881f41a1227653b40bc80, type: 3}
 --- !u!1001 &3158634962037474379

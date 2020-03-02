@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     }
     void Start()
     {
-        projectileRB2D = GetComponent<Rigidbody2D>(); // Get the rigidbody
+       
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class Projectile : MonoBehaviour
 
     public void Launch(Vector2 direction, float force)
     {
+        Debug.Log("launched function");
         projectileRB2D.AddForce(direction * force); // Add a force to the rigidbody
     }
 

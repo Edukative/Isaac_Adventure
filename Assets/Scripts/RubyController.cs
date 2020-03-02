@@ -89,7 +89,7 @@ public class RubyController : MonoBehaviour
 
     void Launch()
     {
-        GameObject projectileObject = Instantiate(projectilePrefab, rubyRB2D.position * Vector2.up * 0.5f, Quaternion.identity);
+        GameObject projectileObject = Instantiate(projectilePrefab, rubyRB2D.position + Vector2.up * 0.5f, Quaternion.identity);
         // spawns a projectile and stores it inside a GameObject variable
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();

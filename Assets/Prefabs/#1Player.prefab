@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1766507466984419797}
   - component: {fileID: 8390501977570022951}
   - component: {fileID: -6649178837061124725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: '#1Player'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,8 @@ MonoBehaviour:
   speed: 3
   maxHealth: 5
   currentHealth: 5
+  timeInvincible: 2
+  projectilePrefab: {fileID: 0}
 --- !u!50 &8390501977570022951
 Rigidbody2D:
   serializedVersion: 4
@@ -157,7 +159,7 @@ GameObject:
   - component: {fileID: 1766507467395226922}
   - component: {fileID: 1766507467395227093}
   - component: {fileID: 1766507467395227095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
