@@ -18,7 +18,10 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (transform.position.magnitude > 1000.0f) // if it's too away from the scene
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Launch(Vector2 direction, float force)
@@ -30,6 +33,11 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     { 
         Debug.Log("Projectile Collision with " + collision.gameObject);
+        EnemyController e = collision.collider.GetComponent<EnemyController>();
+        if (e != null) // if has succesfully retrieved the Enemy script
+        {
+            e.Fix(); // call the Fix function from the enemy
+        }
         Destroy(gameObject); // destroys the projectile
     }
 }

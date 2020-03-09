@@ -106,6 +106,7 @@ public class EnemyController : MonoBehaviour
 
         // apply the previous sum position to the enemy's rigidbody
     }
+
     void UpdateAnimations (Vector2 direction)
     {
         anim.SetFloat("Move X", direction.x);
@@ -120,5 +121,12 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(-1); // damages the player
         }
+    }
+
+    public void Fix()
+    {
+        broken = false; // yaaay it's fixed!
+        rb2D.simulated = false; // the enemy stops moving
+        anim.SetBool("Fixed", true);
     }
 }
